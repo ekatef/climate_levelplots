@@ -42,7 +42,7 @@ df_long[, "x"] <- as.numeric(gsub(df_long$x,
 
 data(wrld_simpl)
 
-# note that x and y are traditionally reversed
+# note that x and y are reversed
 pts <- SpatialPoints(df_long[, c("y", "x")], 
 	proj4string=CRS(proj4string(wrld_simpl)))
 
