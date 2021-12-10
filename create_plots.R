@@ -52,6 +52,23 @@ df_long_clean_ocean <- df_long[ii, ]
 
 # visualization ----------------------------------------------------------------
 
+# image
+pdf("image.pdf")
+image(x = unlist(data_list$y), y = unlist(data_list$x),
+	z = t(data_list$z), col = mycols, 
+	zlim = range(data_list$z), useRaster = FALSE,
+	# main = PlotTit_Text,
+	breaks = mybreaks,
+	# sub=PlotInfo,
+	xlab="",ylab="")
+maps::map(database = "world", col="gray25", lwd = 1, add = T, 
+	wrap =c(-180, 180))
+fields::image.plot(legend.only = TRUE, zlim= range(data_list$z), col = mycols,
+	horizontal = TRUE, legend.mar = 2, legend.width = 0.5,
+	breaks = mybreaks,
+	panel.first = grid(col = "black"))
+dev.off()
+
 # filled.contour() -> filledContour()
 pdf("raster_filledCont.pdf")
 filledContour(rasterFromXYZ(df_long_clean_ocean), nlevels = 7,
