@@ -24,7 +24,7 @@ wrld <- maps::map('world', xlim = c(-180, 180),
 	ylim = c(-90, 90))
 wrld <- data.frame(lon = wrld$x, lat = wrld$y)
 
-mycols <- brewer.pal(9, "RdYlBu")[-(5:6)]
+mycols <- brewer.pal(9, "RdYlBu")[c(-2, -4:-7)]
 mybreaks <- c(-2, -0.5, 0, 0.5, 1.5)
 
 # data tarnsformation ----------------------------------------------------------
